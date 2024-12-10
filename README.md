@@ -1,6 +1,6 @@
 # Auvious CocoaPod Repo
 
-## Release note
+## Release notes
 
 ### 1.3.1
 - Feature / Added support for portrait mode
@@ -9,6 +9,7 @@
 ### 1.3.0 
 - Feature / Audio output (speaker/earpiece) is now configurable
 - Feature / Conference buttons (mic/cam/speaker) are now configurable
+- Feature / Conference background color is now configurable
 
 ### 1.2.1
 - Feature / Show 'REC' indicator if session is recorded
