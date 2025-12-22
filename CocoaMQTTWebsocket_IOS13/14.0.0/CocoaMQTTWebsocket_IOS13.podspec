@@ -9,9 +9,9 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/jkritikos/CocoaMQTT_Fixed.git" }
   
   s.ios.deployment_target = "13.0"
+  s.swift_version = "5.0"
   
-  s.source_files = "Source/**/*.{h,m}"
-  s.public_header_files = "Source/**/*.h"
+  s.source_files = "Source/**/*.swift"
   
   s.dependency 'Starscream_IOS13', '~> 4.0'
   s.dependency 'MqttCocoaAsyncSocket_IOS13', '~> 14.0'
