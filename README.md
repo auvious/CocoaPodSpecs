@@ -2,6 +2,20 @@
 
 ## Release notes
 
+### 1.4.0
+
+- Feature / screen sharing. Only works within app
+- Feature / Picture in Picture. Can work as standalone or while screen sharing
+- Feature / Support background audio. If app is in background, call continues with audio only
+- Feature / add 'user-agent' to headers to track usage
+- Feature / 3 dots menu (more) if more than 4 actions are available
+- Bug fix / If recording started before app joins the call, the indicator was not shown
+- Bug fix / Use icon instead of 'audio only' if camera is off
+- Bug fix / MQTT Fails if wrong ticket is used
+- Bug fix / if agent changes from MIC to MIC_AND_CAM while PiP, app crashed
+- Bug fix / Add participant and stream metadata when joining the call
+- Bug fix / Do not rejoin conference if notification center is shown
+
 ### 1.3.1
 - Feature / Added support for portrait mode
 - Feature / Changed the remote stream aspect ratio closer to 4:3
