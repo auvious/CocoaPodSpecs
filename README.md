@@ -2,6 +2,28 @@
 
 ## Release notes
 
+### 1.5.0
+
+- Feature / mobile co-browse: `AuviousCobrowse` shares the app's screen with an agent from a ticket, without a call. See the [AuviousSDK README](https://github.com/auvious/auvious-sdk-ios#mobile-co-browse)
+- Feature / co-browse during a call (`cobrowseAvailable`): the call shrinks to picture-in-picture while the customer shares the app
+- Feature / masking: `AuviousMaskingRules`, `UIView.auviousMasked` and SwiftUI `.auviousMasked()`; rules can change while sharing, `debugHighlightMasks` shows what is masked
+- Feature / annotations: the agent and the customer can draw on the shared screen
+- Feature / AR pointer (`arPointerAvailable`): the agent points and draws on the customer's camera and screen share, the customer can draw back
+- Feature / network recovery: the call's streams and MQTT recover after a network drop, and missed conference events are caught up
+- Feature / conference UI: placeholder tiles for participants without video, tap a remote video to switch between fit and fill, pinch to zoom a shared screen, tiles shaped like their video
+- Bug fix / screen share stays published when switching the call mode to mic and cam; screen share is off during AR pointer and co-browse sessions
+- Feature / `AuviousDiagnostics`: Sentry reporting like the Android SDK (`errorReporting`, `logLevel`), only crashes in the SDK's code; `consoleLogLevel` for the SDK's console logs (default `.warning`)
+- Example / ExampleSimpleConference no longer starts Sentry itself
+- Update / WebRTC M155 (AuviousGoogleWebRTC 155.8059.3). Unified Plan: streams are published as tracks, remote streams arrive through the receivers
+- Update / iOS 15 minimum (Xcode 27 rejects lower deployment targets)
+- Update / video views are Metal (RTCMTLVideoView) only, also on simulators
+- Bug fix / tracks a server or caller sends without a stream are delivered together, video included, and without the ones the answer rejected (no black tile for a refused camera)
+- Behaviour / a track that can't be added to a connection is reported to the delegate (`internalError`), not only logged; the offer still goes out with the other tracks
+- Bug fix / conference UI: the notch side follows the interface orientation, and the layout is redone once the view is on screen
+- Example / ExampleSimpleConference uses the scene life cycle (apps built with the iOS 27 SDK don't launch without it), landscape layout without statusBarOrientation
+- Example / Pods are no longer committed: run `pod install` in `Example/`
+- Tests / XCTests of RTCModule against an in-process SFU, run in CI
+
 ### 1.4.0
 
 - Feature / screen sharing. Only works within app
